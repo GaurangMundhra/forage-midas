@@ -59,21 +59,34 @@
 			<version>3.1.2</version> <!-- Ensure this is correct -->
 		</dependency>
 
+		<dependency>
+    		<groupId>com.jpmc.midascore</groupId>
+    		<artifactId>transaction-incentive-api</artifactId>
+    		<version>1.0</version>
+		</dependency>
+
+
 	</dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
+<build>
+    <sourceDirectory>src/main/java</sourceDirectory>
+    <resources>
+        <resource>
+            <directory>src/main/resources</directory>
+        </resource>
+    </resources>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.1.2</version>
+        </plugin>
+    </plugins>
+</build>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.1.2</version> <!-- You can also try the latest version -->
-			</plugin>
-		</plugins>
-	</build>
 
 </project>

@@ -1,8 +1,9 @@
 package com.jpmc.midascore.component;
 
+import org.springframework.stereotype.Component;
+
 import com.jpmc.midascore.entity.UserRecord;
 import com.jpmc.midascore.repository.UserRepository;
-import org.springframework.stereotype.Component;
 
 @Component
 public class DatabaseConduit {
@@ -14,6 +15,12 @@ public class DatabaseConduit {
 
     public void save(UserRecord userRecord) {
         userRepository.save(userRecord);
+        
+        // Debugging log for Waldorf
+        if ("waldorf".equalsIgnoreCase(userRecord.getName())) {
+            System.out.println("Waldorf's balance updated to: " + userRecord.getBalance());
+        }
     }
+    
 
 }

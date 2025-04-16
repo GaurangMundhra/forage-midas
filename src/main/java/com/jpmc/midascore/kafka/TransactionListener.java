@@ -13,6 +13,8 @@ public class TransactionListener {
     public void listen(ConsumerRecord<String, Transaction> record) {
         Transaction transaction = record.value();
         System.out.println("Received transaction: " + transaction);
-        // No processing yet, just verifying receipt
+
+        // Example: Log the sender and recipient
+        System.out.println("Transaction from: " + transaction.getSender() + " to " + transaction.getRecipient());
     }
 }
